@@ -71,7 +71,6 @@
         </dependency>
 
 
-
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -87,12 +86,11 @@
         </dependency>
 
 
-
     </dependencies>
 
     <build>
         <plugins>
-               <!-- Compile code-->
+            <!-- Compile code-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -108,17 +106,34 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
-                <configuration>
-                    <includes>
-                        <include>**/ParallelRun.java</include>
-                    </includes>
-                    <parallel>methods</parallel>
-                    <threadCount>4</threadCount>
-                    <useUnlimitedThreads>false</useUnlimitedThreads>
-                </configuration>
+
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                        <configuration>
+                            
+                            <includes>
 
+                                <include>**/MyTestRunner.java</include>
+
+                            </includes>
+                            <parallel>methods</parallel>
+                            <threadCount>4</threadCount>
+                            <perCoreThreadCount>true</perCoreThreadCount>
+
+                        </configuration>
+                    </execution>
+                </executions>
+
+            </plugin>
 
 
         </plugins>

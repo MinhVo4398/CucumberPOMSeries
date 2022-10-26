@@ -1,5 +1,6 @@
 Feature: Account Feature Page
 
+
   Background:
     Given user has already logged in to application
       | username                | password |
@@ -11,7 +12,7 @@ Feature: Account Feature Page
     Then page title should be "My account - My Store"
 
 
-  Scenario: Accounts section count
+  Scenario: Accounts section acount
     Given user is on Accounts page
     Then user gets accounts section
       | ORDER HISTORY AND DETAILS |

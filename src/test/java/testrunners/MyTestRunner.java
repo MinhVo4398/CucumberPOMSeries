@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/AppFeatures"},
         glue = {"stepdefinitions", "AppHooks"},
         monochrome = true,
-        plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                "timeline:test-output-thread/"
         }
 
 )
