@@ -40,4 +40,13 @@ public class LoginPage {
         driver.findElement(signInButton).click();
     }
 
+    public AccountsPage doLogin(String un, String pwd) {
+        System.out.println("Login with: " + un + " and " + pwd);
+        driver.findElement(emailId).sendKeys(un);
+        driver.findElement(password).sendKeys(pwd);
+        driver.findElement(signInButton).click();
+
+        // click Login qua trang Account -> khoi tao
+        return new AccountsPage(driver);
+    }
 }

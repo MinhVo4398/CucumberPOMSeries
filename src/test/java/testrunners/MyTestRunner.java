@@ -8,8 +8,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/AppFeatures"},
+        features = {"src/test/resources/AppFeatures/AccountPage.feature"},
         glue = {"stepdefinitions", "AppHooks"},
+        monochrome = true,
         plugin = {"pretty"
         }
 
